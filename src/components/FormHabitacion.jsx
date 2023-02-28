@@ -58,9 +58,13 @@ const FormHabitacion = ({habitacion,setHabitacion}) =>{
              
               <input onChange={handleChange} type="number" name="habitacion_num"  className="form-control" placeholder="Cantidad de cama"/>
             </div>
-            <div className=" form-check">
-            <div> Tiene TV</div>   
-            
+            <div className="container">
+            <div className="row">
+            <div className="col">
+            <div> Tiene TV</div> 
+            <div className="mb-4 btn-group">
+            <div className=" form-check me-3">
+              
             <input  onChange={handleChange} type="radio" name="tv"  className="form-check-input" value="1" />
             <label className="form-check-label">
                 Si
@@ -72,12 +76,13 @@ const FormHabitacion = ({habitacion,setHabitacion}) =>{
                 No
               </label>
             </div>
-            <div className=" form-check">
-                <div>
-                Tiene Frigobar
-                </div>
-             
-             
+            </div>
+            </div>
+            <div className="col">
+            <div>Tiene Frigobar</div>
+            <div className="mb-4 btn-group">
+            <div className=" form-check me-3">
+          
             <input  onChange={handleChange} type="radio" name="frigobar"  className="form-check-input" value="1" />
             <label className="form-check-label">
                 Si
@@ -89,7 +94,13 @@ const FormHabitacion = ({habitacion,setHabitacion}) =>{
                 No
               </label>
             </div>
+            </div>
+            </div>
+            <div>
+            </div>
+            </div>
             <button className="btn btn-primary">Adicionar</button>
+            </div>
         </form>
        
     );

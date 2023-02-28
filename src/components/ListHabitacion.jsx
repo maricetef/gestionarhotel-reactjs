@@ -1,7 +1,15 @@
 import React, {useState,useEffect}from "react";
 
 const ListHabitacion = ({habitacion}) =>{
-    const [habit,setHabit]=useState([]);
+    const [habit,setHabit]=useState([{
+        idhab:0,
+        habitacion_piso:1,
+        habitacion_num:2,
+        cant_camas:1,
+        tv:0,
+        frigobar:1
+    }
+    ]);
     const [actualizar,setActualizar]=useState(false);
 
     useEffect(()=>{
@@ -37,14 +45,15 @@ const ListHabitacion = ({habitacion}) =>{
         .then(res=>console.log(res))*/
     }
     return (
-     <table className="table">
+     <table className="table table-hover table-striped">
         <thead>
             <tr>
-                <td>Piso de la Habitacion</td>
-                <td>Numero de la Habitacion</td>
-                <td>Cantidad de camas</td>
-                <td>Tiene TV</td>
-                <td>Tiene Frigobar</td>
+                <th>Piso de la Habitacion</th>
+                <th>Numero de la Habitacion</th>
+                <th>Cantidad de camas</th>
+                <th>Tiene TV</th>
+                <th>Tiene Frigobar</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -56,11 +65,11 @@ const ListHabitacion = ({habitacion}) =>{
                     <td>{(hab.tv)? "Si" : "No"}</td>
                     <td>{(hab.frigobar)? "Si" : "No"}</td>
                     <td>
-                        <div className="mb-3">
-                            <button onClick={()=>handleEliminar(hab.idhab)} className="btn btn-danger">Eliminar</button>
+                        <div className="mb-3 btn-group">
+                            <button onClick={()=>handleEliminar(hab.idhab)} className="btn btn-danger me-1">Eliminar</button>
                         
                         
-                            <button onClick={()=>handleEditar(hab.idhab)} className="btn btn-dark">Editar</button>
+                            <button onClick={()=>handleEditar(hab.idhab)} className="btn btn-secondary">Editar</button>
                         </div>
                     </td>
             </tr>
